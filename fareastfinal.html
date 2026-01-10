@@ -5,38 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NOAH | Georgian & Armenian Restaurant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --primary:#8b2c2c;
+  --accent:#8c2f2f;
   --dark:#222;
   --gray:#666;
-  --light:#f7f7f7;
-  --border:#ddd;
+  --light:#fafafa;
+  --border:#e5e5e5;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:'Roboto',sans-serif;
+  font-family:'Inter',sans-serif;
   color:var(--dark);
   background:#fff;
   line-height:1.6;
 }
 
-/* ---------- NAV ---------- */
+/* ===== HEADER ===== */
 header{
-  border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
   background:#fff;
+  border-bottom:1px solid var(--border);
   z-index:1000;
 }
-.nav{
+.header-inner{
   max-width:1200px;
   margin:auto;
-  padding:16px 24px;
+  padding:18px 24px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -52,35 +52,35 @@ nav a{
   font-size:14px;
   color:var(--dark);
 }
-nav a:hover{color:var(--primary);}
+nav a:hover{color:var(--accent);}
 
-/* ---------- HERO ---------- */
+/* ===== HERO ===== */
 .hero{
   background:var(--light);
-  padding:80px 24px;
 }
 .hero-inner{
   max-width:1200px;
   margin:auto;
+  padding:80px 24px;
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1.1fr .9fr;
   gap:40px;
   align-items:center;
 }
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:48px;
+  font-size:46px;
 }
 .hero p{
-  margin-top:16px;
+  margin-top:14px;
   color:var(--gray);
   max-width:480px;
 }
 .hero a{
   display:inline-block;
-  margin-top:24px;
-  padding:12px 28px;
-  background:var(--primary);
+  margin-top:26px;
+  padding:12px 26px;
+  background:var(--accent);
   color:#fff;
   text-decoration:none;
   font-size:14px;
@@ -90,7 +90,7 @@ nav a:hover{color:var(--primary);}
   border-radius:6px;
 }
 
-/* ---------- SECTIONS ---------- */
+/* ===== SECTIONS ===== */
 section{
   max-width:1200px;
   margin:auto;
@@ -102,40 +102,49 @@ section{
   margin-bottom:40px;
 }
 
-/* ---------- MENU ---------- */
-.menu-grid{
+/* ===== MENU ===== */
+.menu-wrapper{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
+  gap:48px;
+}
+.menu-category{
+  margin-bottom:40px;
 }
 .menu-category h3{
   font-family:'Playfair Display',serif;
   font-size:22px;
-  margin-bottom:20px;
-  border-bottom:2px solid var(--primary);
+  margin-bottom:16px;
+  border-bottom:2px solid var(--accent);
   display:inline-block;
 }
 .menu-item{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:14px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  padding:10px 0;
+  border-bottom:1px dashed var(--border);
 }
-.menu-item span{
-  color:var(--primary);
+.menu-item:last-child{border-bottom:none;}
+.menu-name{
   font-weight:500;
 }
-.menu-item p{
+.menu-desc{
+  grid-column:1 / 2;
   font-size:14px;
   color:var(--gray);
-  margin-top:4px;
+}
+.menu-price{
+  font-weight:500;
+  color:var(--accent);
 }
 
-/* ---------- RESERVATION ---------- */
+/* ===== RESERVATION ===== */
 .reservation{
   background:var(--light);
 }
 form{
-  max-width:500px;
+  max-width:480px;
 }
 input,textarea{
   width:100%;
@@ -144,21 +153,23 @@ input,textarea{
   border:1px solid var(--border);
   font-size:14px;
 }
+textarea{resize:none;height:120px;}
 button{
-  background:var(--primary);
+  padding:12px 24px;
+  background:var(--accent);
   color:#fff;
   border:none;
-  padding:12px 24px;
-  cursor:pointer;
   font-size:14px;
+  cursor:pointer;
 }
 
-/* ---------- CONTACT ---------- */
+/* ===== CONTACT ===== */
 .contact p{
   margin:8px 0;
+  color:var(--gray);
 }
 
-/* ---------- FOOTER ---------- */
+/* ===== FOOTER ===== */
 footer{
   border-top:1px solid var(--border);
   padding:24px;
@@ -167,10 +178,10 @@ footer{
   color:var(--gray);
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;}
-  .menu-grid{grid-template-columns:1fr;}
+  .menu-wrapper{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -178,7 +189,7 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
+  <div class="header-inner">
     <div class="logo">NOAH</div>
     <nav>
       <a href="#menu">Menu</a>
@@ -193,7 +204,7 @@ footer{
     <div>
       <h1>Georgian & Armenian Cuisine</h1>
       <p>
-        Traditional recipes, fresh ingredients, and warm hospitality
+        Authentic recipes, fresh ingredients and warm hospitality
         inspired by the Caucasus.
       </p>
       <a href="#reservation">Reserve a Table</a>
@@ -205,47 +216,62 @@ footer{
 <section id="menu">
   <h2 class="section-title">Menu</h2>
 
-  <div class="menu-grid">
-    <div class="menu-category">
-      <h3>Starters</h3>
-      <div class="menu-item">
-        <div>
-          Dolma
-          <p>Vine leaves, rice, herbs</p>
+  <div class="menu-wrapper">
+    <div>
+      <div class="menu-category">
+        <h3>Starters</h3>
+        <div class="menu-item">
+          <div>
+            <div class="menu-name">Dolma</div>
+            <div class="menu-desc">Vine leaves, rice, herbs</div>
+          </div>
+          <div class="menu-price">€9</div>
         </div>
-        <span>€9</span>
+        <div class="menu-item">
+          <div>
+            <div class="menu-name">Cheese Plate</div>
+            <div class="menu-desc">Armenian & Georgian cheeses, lavash</div>
+          </div>
+          <div class="menu-price">€11</div>
+        </div>
       </div>
-      <div class="menu-item">
-        <div>
-          Cheese Plate
-          <p>Georgian & Armenian cheeses</p>
+
+      <div class="menu-category">
+        <h3>Desserts</h3>
+        <div class="menu-item">
+          <div>
+            <div class="menu-name">Churchkhela</div>
+            <div class="menu-desc">Walnuts in grape must</div>
+          </div>
+          <div class="menu-price">€6</div>
         </div>
-        <span>€11</span>
       </div>
     </div>
 
-    <div class="menu-category">
-      <h3>Main Dishes</h3>
-      <div class="menu-item">
-        <div>
-          Adjaruli Khachapuri
-          <p>Cheese bread with egg</p>
+    <div>
+      <div class="menu-category">
+        <h3>Main Dishes</h3>
+        <div class="menu-item">
+          <div>
+            <div class="menu-name">Adjaruli Khachapuri</div>
+            <div class="menu-desc">Cheese bread with egg and butter</div>
+          </div>
+          <div class="menu-price">€12</div>
         </div>
-        <span>€12</span>
-      </div>
-      <div class="menu-item">
-        <div>
-          Khinkali
-          <p>Handmade meat dumplings</p>
+        <div class="menu-item">
+          <div>
+            <div class="menu-name">Khinkali</div>
+            <div class="menu-desc">Handmade meat dumplings</div>
+          </div>
+          <div class="menu-price">€13</div>
         </div>
-        <span>€13</span>
-      </div>
-      <div class="menu-item">
-        <div>
-          Khorovats
-          <p>Charcoal grilled pork</p>
+        <div class="menu-item">
+          <div>
+            <div class="menu-name">Khorovats</div>
+            <div class="menu-desc">Charcoal grilled pork, lavash</div>
+          </div>
+          <div class="menu-price">€19</div>
         </div>
-        <span>€19</span>
       </div>
     </div>
   </div>
@@ -259,9 +285,9 @@ footer{
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="date" name="date" required>
-    <input type="number" name="guests" placeholder="Guests" required>
+    <input type="number" name="guests" placeholder="Number of Guests" required>
     <textarea name="message" placeholder="Special requests"></textarea>
-    <button type="submit">Book Table</button>
+    <button type="submit">Reserve Table</button>
   </form>
 </section>
 
@@ -278,4 +304,3 @@ footer{
 
 </body>
 </html>
-
