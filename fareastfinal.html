@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NOAH | Georgian & Armenian Restaurant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --accent:#8c2f2f;
-  --dark:#222;
-  --gray:#666;
-  --light:#fafafa;
-  --border:#e5e5e5;
+  --dark:#3a2c28;
+  --gray:#7a6e65;
+  --light:#fdf6f0;
+  --border:#d7c8bb;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:'Inter',sans-serif;
+  font-family:'Roboto',sans-serif;
   color:var(--dark);
-  background:#fff;
+  background:var(--light);
   line-height:1.6;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   position:sticky;
   top:0;
-  background:#fff;
+  background:var(--light);
   border-bottom:1px solid var(--border);
   z-index:1000;
 }
@@ -43,54 +43,64 @@ header{
 }
 .logo{
   font-family:'Playfair Display',serif;
-  font-size:26px;
+  font-size:28px;
   letter-spacing:2px;
+  color:var(--accent);
 }
 nav a{
   margin-left:28px;
   text-decoration:none;
   font-size:14px;
   color:var(--dark);
+  transition:color 0.3s;
 }
 nav a:hover{color:var(--accent);}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-  background:var(--light);
+  background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover no-repeat;
+  padding:100px 24px;
+  position:relative;
+  color:#fff;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.4);
 }
 .hero-inner{
   max-width:1200px;
   margin:auto;
-  padding:80px 24px;
+  position:relative;
   display:grid;
-  grid-template-columns:1.1fr .9fr;
+  grid-template-columns:1fr 1fr;
   gap:40px;
   align-items:center;
 }
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:46px;
+  font-size:48px;
 }
 .hero p{
   margin-top:14px;
-  color:var(--gray);
   max-width:480px;
 }
 .hero a{
   display:inline-block;
-  margin-top:26px;
-  padding:12px 26px;
+  margin-top:20px;
+  padding:12px 28px;
   background:var(--accent);
   color:#fff;
   text-decoration:none;
-  font-size:14px;
+  transition:0.3s;
 }
-.hero img{
-  width:100%;
-  border-radius:6px;
+.hero a:hover{
+  background:#5a1f1f;
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section{
   max-width:1200px;
   margin:auto;
@@ -100,9 +110,10 @@ section{
   font-family:'Playfair Display',serif;
   font-size:32px;
   margin-bottom:40px;
+  color:var(--accent);
 }
 
-/* ===== MENU ===== */
+/* MENU */
 .menu-wrapper{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -138,10 +149,18 @@ section{
   font-weight:500;
   color:var(--accent);
 }
+.show-more-btn{
+  margin-top:16px;
+  cursor:pointer;
+  color:var(--accent);
+  font-weight:500;
+  border:none;
+  background:none;
+}
 
-/* ===== RESERVATION ===== */
+/* RESERVATION */
 .reservation{
-  background:var(--light);
+  background:#f6eee5;
 }
 form{
   max-width:480px;
@@ -161,15 +180,17 @@ button{
   border:none;
   font-size:14px;
   cursor:pointer;
+  transition:0.3s;
 }
+button:hover{background:#5a1f1f;}
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact p{
   margin:8px 0;
-  color:var(--gray);
+  color:var(--dark);
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   border-top:1px solid var(--border);
   padding:24px;
@@ -178,14 +199,13 @@ footer{
   color:var(--gray);
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;}
   .menu-wrapper{grid-template-columns:1fr;}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -203,75 +223,31 @@ footer{
   <div class="hero-inner">
     <div>
       <h1>Georgian & Armenian Cuisine</h1>
-      <p>
-        Authentic recipes, fresh ingredients and warm hospitality
-        inspired by the Caucasus.
-      </p>
+      <p>Classic recipes, warm ambiance, and old-world charm.</p>
       <a href="#reservation">Reserve a Table</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
   </div>
 </div>
 
 <section id="menu">
   <h2 class="section-title">Menu</h2>
-
   <div class="menu-wrapper">
     <div>
       <div class="menu-category">
         <h3>Starters</h3>
-        <div class="menu-item">
-          <div>
-            <div class="menu-name">Dolma</div>
-            <div class="menu-desc">Vine leaves, rice, herbs</div>
-          </div>
-          <div class="menu-price">€9</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-name">Cheese Plate</div>
-            <div class="menu-desc">Armenian & Georgian cheeses, lavash</div>
-          </div>
-          <div class="menu-price">€11</div>
-        </div>
-      </div>
-
-      <div class="menu-category">
-        <h3>Desserts</h3>
-        <div class="menu-item">
-          <div>
-            <div class="menu-name">Churchkhela</div>
-            <div class="menu-desc">Walnuts in grape must</div>
-          </div>
-          <div class="menu-price">€6</div>
-        </div>
+        <div class="menu-item"> <div><div class="menu-name">Dolma</div><div class="menu-desc">Vine leaves, rice, herbs</div></div><div class="menu-price">€9</div></div>
+        <div class="menu-item"> <div><div class="menu-name">Cheese Plate</div><div class="menu-desc">Armenian & Georgian cheeses</div></div><div class="menu-price">€11</div></div>
+        <div class="menu-item extra-item" style="display:none"> <div><div class="menu-name">Eggplant Rolls</div><div class="menu-desc">Smoked, garlic, herbs</div></div><div class="menu-price">€8</div></div>
+        <button class="show-more-btn" onclick="toggleMenu(this)">Show More</button>
       </div>
     </div>
-
     <div>
       <div class="menu-category">
         <h3>Main Dishes</h3>
-        <div class="menu-item">
-          <div>
-            <div class="menu-name">Adjaruli Khachapuri</div>
-            <div class="menu-desc">Cheese bread with egg and butter</div>
-          </div>
-          <div class="menu-price">€12</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-name">Khinkali</div>
-            <div class="menu-desc">Handmade meat dumplings</div>
-          </div>
-          <div class="menu-price">€13</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-name">Khorovats</div>
-            <div class="menu-desc">Charcoal grilled pork, lavash</div>
-          </div>
-          <div class="menu-price">€19</div>
-        </div>
+        <div class="menu-item"> <div><div class="menu-name">Adjaruli Khachapuri</div><div class="menu-desc">Cheese bread with egg</div></div><div class="menu-price">€12</div></div>
+        <div class="menu-item"> <div><div class="menu-name">Khinkali</div><div class="menu-desc">Handmade dumplings</div></div><div class="menu-price">€13</div></div>
+        <div class="menu-item extra-item" style="display:none"> <div><div class="menu-name">Khorovats</div><div class="menu-desc">Charcoal grilled pork</div></div><div class="menu-price">€19</div></div>
+        <button class="show-more-btn" onclick="toggleMenu(this)">Show More</button>
       </div>
     </div>
   </div>
@@ -279,8 +255,6 @@ footer{
 
 <section id="reservation" class="reservation">
   <h2 class="section-title">Reservations</h2>
-
-  <!-- Replace with your Formspree URL -->
   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email" required>
@@ -301,6 +275,22 @@ footer{
 <footer>
   © 2026 NOAH Restaurant
 </footer>
+
+<script>
+function toggleMenu(btn){
+  const category = btn.parentElement;
+  const extras = category.querySelectorAll('.extra-item');
+  extras.forEach(item=>{
+    if(item.style.display === 'none'){
+      item.style.display='grid';
+      btn.textContent='Show Less';
+    } else {
+      item.style.display='none';
+      btn.textContent='Show More';
+    }
+  });
+}
+</script>
 
 </body>
 </html>
