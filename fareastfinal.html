@@ -5,217 +5,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NOAH | Georgian & Armenian Restaurant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0e0e0d;
-  --section:#161615;
-  --gold:#b8a46b;
-  --text:#e8e6e1;
-  --muted:#a5a29a;
-  --line:rgba(255,255,255,.08);
+  --primary:#8b2c2c;
+  --dark:#222;
+  --gray:#666;
+  --light:#f7f7f7;
+  --border:#ddd;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Inter',sans-serif;
-  line-height:1.7;
+  font-family:'Roboto',sans-serif;
+  color:var(--dark);
+  background:#fff;
+  line-height:1.6;
 }
 
-/* ---------------- NAV ---------------- */
+/* ---------- NAV ---------- */
 header{
-  position:fixed;
+  border-bottom:1px solid var(--border);
+  position:sticky;
   top:0;
-  width:100%;
-  background:rgba(14,14,13,.9);
-  backdrop-filter:blur(8px);
+  background:#fff;
   z-index:1000;
 }
 .nav{
-  max-width:1300px;
+  max-width:1200px;
   margin:auto;
-  padding:18px 48px;
+  padding:16px 24px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 .logo{
-  font-family:'Libre Baskerville',serif;
-  font-size:22px;
-  letter-spacing:5px;
-  color:var(--gold);
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  letter-spacing:2px;
 }
 nav a{
-  margin-left:36px;
+  margin-left:28px;
   text-decoration:none;
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--text);
+  font-size:14px;
+  color:var(--dark);
 }
-nav a:hover{color:var(--gold);}
+nav a:hover{color:var(--primary);}
 
-/* ---------------- HERO ---------------- */
+/* ---------- HERO ---------- */
 .hero{
-  height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
-    url("https://images.unsplash.com/photo-1544148103-0773bf10d330") center/cover;
-  display:flex;
-  align-items:center;
+  background:var(--light);
+  padding:80px 24px;
 }
 .hero-inner{
-  max-width:800px;
-  padding:0 60px;
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
 .hero h1{
-  font-family:'Libre Baskerville',serif;
-  font-size:68px;
-  letter-spacing:6px;
-  color:var(--gold);
+  font-family:'Playfair Display',serif;
+  font-size:48px;
 }
 .hero p{
-  margin-top:24px;
-  max-width:520px;
-  font-size:17px;
-  color:var(--muted);
+  margin-top:16px;
+  color:var(--gray);
+  max-width:480px;
 }
 .hero a{
   display:inline-block;
-  margin-top:40px;
-  padding:14px 38px;
-  border:1px solid var(--gold);
+  margin-top:24px;
+  padding:12px 28px;
+  background:var(--primary);
+  color:#fff;
   text-decoration:none;
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--gold);
+  font-size:14px;
 }
-.hero a:hover{
-  background:var(--gold);
-  color:#000;
+.hero img{
+  width:100%;
+  border-radius:6px;
 }
 
-/* ---------------- SECTIONS ---------------- */
+/* ---------- SECTIONS ---------- */
 section{
   max-width:1200px;
   margin:auto;
-  padding:140px 48px;
+  padding:80px 24px;
 }
 .section-title{
-  font-family:'Libre Baskerville',serif;
-  font-size:36px;
-  letter-spacing:3px;
-  color:var(--gold);
-  margin-bottom:70px;
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:40px;
 }
 
-/* ---------------- STORY ---------------- */
-.story{
-  max-width:700px;
-  color:var(--muted);
-  font-size:17px;
-}
-
-/* ---------------- MENU ---------------- */
-.menu{
-  background:var(--section);
-}
-.menu-category{
-  margin-bottom:70px;
+/* ---------- MENU ---------- */
+.menu-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
 .menu-category h3{
-  font-family:'Libre Baskerville',serif;
+  font-family:'Playfair Display',serif;
   font-size:22px;
-  letter-spacing:2px;
-  margin-bottom:28px;
-  color:var(--gold);
+  margin-bottom:20px;
+  border-bottom:2px solid var(--primary);
+  display:inline-block;
 }
 .menu-item{
   display:flex;
   justify-content:space-between;
-  align-items:flex-start;
-  padding:14px 0;
-  border-bottom:1px solid var(--line);
+  margin-bottom:14px;
 }
-.menu-item:last-child{border-bottom:none;}
-.menu-item div{
-  max-width:75%;
-}
-.menu-item h4{
-  font-size:16px;
+.menu-item span{
+  color:var(--primary);
   font-weight:500;
 }
 .menu-item p{
   font-size:14px;
-  color:var(--muted);
+  color:var(--gray);
   margin-top:4px;
 }
-.price{
-  font-size:15px;
-  color:var(--gold);
-}
 
-/* ---------------- RESERVATION ---------------- */
+/* ---------- RESERVATION ---------- */
 .reservation{
-  background:var(--section);
+  background:var(--light);
 }
 form{
-  max-width:600px;
-  margin:auto;
+  max-width:500px;
 }
-.form-group{
-  margin-bottom:18px;
-}
-input, textarea{
+input,textarea{
   width:100%;
-  padding:14px;
-  background:#0e0e0d;
-  border:1px solid var(--line);
-  color:var(--text);
+  padding:12px;
+  margin-bottom:14px;
+  border:1px solid var(--border);
   font-size:14px;
 }
-textarea{resize:none;height:120px;}
 button{
-  margin-top:10px;
-  padding:14px 40px;
-  background:none;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:12px 24px;
   cursor:pointer;
-}
-button:hover{
-  background:var(--gold);
-  color:#000;
+  font-size:14px;
 }
 
-/* ---------------- CONTACT ---------------- */
+/* ---------- CONTACT ---------- */
 .contact p{
-  margin:10px 0;
-  color:var(--muted);
+  margin:8px 0;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* ---------- FOOTER ---------- */
 footer{
+  border-top:1px solid var(--border);
+  padding:24px;
   text-align:center;
-  padding:32px;
-  font-size:12px;
-  letter-spacing:2px;
-  color:#777;
+  font-size:13px;
+  color:var(--gray);
 }
 
-/* ---------------- RESPONSIVE ---------------- */
-@media(max-width:768px){
-  .hero h1{font-size:46px;}
-  section{padding:100px 28px;}
-  .hero-inner{padding:0 28px;}
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .menu-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -226,88 +181,72 @@ footer{
   <div class="nav">
     <div class="logo">NOAH</div>
     <nav>
-      <a href="#story">Story</a>
       <a href="#menu">Menu</a>
       <a href="#reservation">Reservations</a>
-      <a href="#contact">Visit</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <div class="hero">
   <div class="hero-inner">
-    <h1>NOAH</h1>
-    <p>
-      Georgian and Armenian cuisine rooted in tradition,
-      fire, stone and hospitality.
-    </p>
-    <a href="#menu">View Menu</a>
+    <div>
+      <h1>Georgian & Armenian Cuisine</h1>
+      <p>
+        Traditional recipes, fresh ingredients, and warm hospitality
+        inspired by the Caucasus.
+      </p>
+      <a href="#reservation">Reserve a Table</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
   </div>
 </div>
 
-<section id="story">
-  <h2 class="section-title">Our Story</h2>
-  <p class="story">
-    NOAH brings together the culinary heritage of Georgia and Armenia.
-    Our kitchen respects time, fire and simplicity — recipes passed
-    through generations, served without excess.
-  </p>
-</section>
-
-<section id="menu" class="menu">
+<section id="menu">
   <h2 class="section-title">Menu</h2>
 
-  <div class="menu-category">
-    <h3>Starters</h3>
-    <div class="menu-item">
-      <div>
-        <h4>Dolma</h4>
-        <p>Vine leaves, rice, herbs</p>
+  <div class="menu-grid">
+    <div class="menu-category">
+      <h3>Starters</h3>
+      <div class="menu-item">
+        <div>
+          Dolma
+          <p>Vine leaves, rice, herbs</p>
+        </div>
+        <span>€9</span>
       </div>
-      <div class="price">€9</div>
-    </div>
-    <div class="menu-item">
-      <div>
-        <h4>Cheese Selection</h4>
-        <p>Armenian & Georgian cheeses, lavash</p>
+      <div class="menu-item">
+        <div>
+          Cheese Plate
+          <p>Georgian & Armenian cheeses</p>
+        </div>
+        <span>€11</span>
       </div>
-      <div class="price">€11</div>
     </div>
-  </div>
 
-  <div class="menu-category">
-    <h3>Main Dishes</h3>
-    <div class="menu-item">
-      <div>
-        <h4>Adjaruli Khachapuri</h4>
-        <p>Cheese bread, egg, butter</p>
+    <div class="menu-category">
+      <h3>Main Dishes</h3>
+      <div class="menu-item">
+        <div>
+          Adjaruli Khachapuri
+          <p>Cheese bread with egg</p>
+        </div>
+        <span>€12</span>
       </div>
-      <div class="price">€12</div>
-    </div>
-    <div class="menu-item">
-      <div>
-        <h4>Khinkali</h4>
-        <p>Handmade dumplings, black pepper broth</p>
+      <div class="menu-item">
+        <div>
+          Khinkali
+          <p>Handmade meat dumplings</p>
+        </div>
+        <span>€13</span>
       </div>
-      <div class="price">€13</div>
-    </div>
-    <div class="menu-item">
-      <div>
-        <h4>Khorovats</h4>
-        <p>Charcoal grilled pork, lavash</p>
+      <div class="menu-item">
+        <div>
+          Khorovats
+          <p>Charcoal grilled pork</p>
+        </div>
+        <span>€19</span>
       </div>
-      <div class="price">€19</div>
-    </div>
-  </div>
-
-  <div class="menu-category">
-    <h3>Desserts</h3>
-    <div class="menu-item">
-      <div>
-        <h4>Churchkhela</h4>
-        <p>Walnuts in grape must</p>
-      </div>
-      <div class="price">€6</div>
     </div>
   </div>
 </section>
@@ -315,37 +254,28 @@ footer{
 <section id="reservation" class="reservation">
   <h2 class="section-title">Reservations</h2>
 
-  <!-- Replace ACTION URL with your Formspree endpoint -->
+  <!-- Replace with your Formspree URL -->
   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <div class="form-group">
-      <input type="text" name="name" placeholder="Full Name" required>
-    </div>
-    <div class="form-group">
-      <input type="email" name="email" placeholder="Email" required>
-    </div>
-    <div class="form-group">
-      <input type="date" name="date" required>
-    </div>
-    <div class="form-group">
-      <input type="number" name="guests" placeholder="Number of Guests" required>
-    </div>
-    <div class="form-group">
-      <textarea name="message" placeholder="Special requests"></textarea>
-    </div>
-    <button type="submit">Reserve Table</button>
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="date" name="date" required>
+    <input type="number" name="guests" placeholder="Guests" required>
+    <textarea name="message" placeholder="Special requests"></textarea>
+    <button type="submit">Book Table</button>
   </form>
 </section>
 
 <section id="contact" class="contact">
-  <h2 class="section-title">Visit Us</h2>
-  <p>Old Town</p>
-  <p>+357 99 000000</p>
-  <p>Open Daily · 12:00 – 23:30</p>
+  <h2 class="section-title">Contact</h2>
+  <p>📍 Old Town</p>
+  <p>📞 +357 99 000000</p>
+  <p>🕒 Daily 12:00 – 23:00</p>
 </section>
 
 <footer>
-  © 2026 NOAH · Georgian & Armenian Restaurant
+  © 2026 NOAH Restaurant
 </footer>
 
 </body>
 </html>
+
