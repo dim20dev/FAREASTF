@@ -6,363 +6,311 @@
 <title>NOAH | Georgian & Armenian Restaurant</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root {
-  --accent: #8c2f2f;
-  --dark: #2b2623;
-  --gray: #6f6a66;
-  --light: #faf6f2;
-  --white: #fff;
-  --border: #e4ddd6;
+:root{
+  --accent:#8b2c2c;
+  --dark:#2b2522;
+  --gray:#6f6a66;
+  --light:#faf6f2;
+  --border:#e1d9d1;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--dark);
-  background: var(--light);
-  line-height: 1.6;
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.6;
 }
 
-/* HEADER */
-header {
-  position: sticky;
+/* NAVBAR */
+header{
+  position:sticky;
   top:0;
-  background: var(--white);
+  background:#fff;
   border-bottom:1px solid var(--border);
-  z-index: 1000;
+  z-index:1000;
 }
-.header-inner {
+.navbar{
   max-width:1200px;
   margin:auto;
   padding:18px 24px;
   display:flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content:space-between;
+  align-items:center;
 }
-.logo {
+.logo{
   font-family:'Playfair Display',serif;
   font-size:26px;
   letter-spacing:2px;
-  color: var(--accent);
+  color:var(--accent);
 }
-nav a {
+.nav-links a{
   margin-left:28px;
   text-decoration:none;
   font-size:14px;
-  color: var(--dark);
-  transition: 0.3s;
+  color:var(--dark);
 }
-nav a:hover { color:var(--accent); }
+.nav-links a:hover{color:var(--accent);}
 
 /* HERO */
-.hero {
+.hero{
   position:relative;
-  background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
-  height: 80vh;
+  height:80vh;
+  background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:0 24px;
 }
-.hero::after {
+.hero::after{
   content:'';
   position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.5);
+  inset:0;
+  background:rgba(0,0,0,0.55);
 }
-.hero-content {
+.hero-content{
   position:relative;
-  max-width:900px;
-  color:var(--white);
+  max-width:800px;
+  padding:0 24px;
+  color:#fff;
+  animation:fadeUp 0.8s ease forwards;
 }
-.hero-content h1 {
+.hero h1{
   font-family:'Playfair Display',serif;
   font-size:48px;
 }
-.hero-content p {
-  margin-top:12px;
-  color:rgba(255,255,255,0.9);
+.hero p{
+  margin-top:14px;
+  font-size:16px;
 }
-.hero-content a {
-  margin-top:20px;
+.hero a{
   display:inline-block;
-  padding:14px 30px;
+  margin-top:22px;
+  padding:14px 32px;
   background:var(--accent);
-  color:var(--white);
+  color:#fff;
   text-decoration:none;
   font-size:14px;
-  transition:0.3s;
 }
-.hero-content a:hover {
-  background:#61201f;
-}
-
-/* TRANSITION EFFECT */
-.fade-in {
-  opacity:0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards;
-}
-@keyframes fadeInUp {
-  to {
-    opacity:1;
-    transform: translateY(0);
-  }
-}
+.hero a:hover{background:#5e1e1e;}
 
 /* SECTIONS */
-section {
+section{
   max-width:1200px;
   margin:auto;
   padding:80px 24px;
 }
-.section-title {
-  font-family:'Playfair Display', serif;
+.section-title{
+  font-family:'Playfair Display',serif;
   font-size:32px;
-  margin-bottom:28px;
-  text-align:center;
   color:var(--accent);
+  margin-bottom:30px;
+  text-align:center;
 }
 
 /* ABOUT */
-.about p {
-  color:var(--gray);
-  font-size:16px;
-  text-align:center;
+.about-text{
   max-width:800px;
   margin:auto;
-}
-
-/* WHY US */
-.features {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:40px;
-  margin-top:40px;
-}
-.feature {
   text-align:center;
-}
-.feature h4 {
-  font-family:'Playfair Display',serif;
-  color:var(--accent);
-  margin-bottom:12px;
-}
-.feature p {
-  font-size:14px;
   color:var(--gray);
 }
 
-/* MENU */
-.menu-grid {
+/* MENU PREVIEW */
+.menu-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:36px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
 }
-.menu-category h3 {
-  font-family:'Playfair Display', serif;
-  font-size:22px;
-  color:var(--accent);
-  margin-bottom:16px;
-  text-align:center;
-}
-.menu-item {
+.menu-item{
   border-bottom:1px solid var(--border);
-  padding:12px 0;
+  padding-bottom:12px;
 }
-.menu-name {
+.menu-name{
   font-weight:500;
 }
-.menu-desc {
+.menu-price{
+  float:right;
+  color:var(--accent);
+}
+.menu-desc{
   font-size:14px;
   color:var(--gray);
   margin-top:4px;
 }
-.menu-price {
-  float:right;
-  font-weight:500;
-  color:var(--accent);
+.menu-pdf{
+  margin-top:40px;
+  text-align:center;
 }
-.show-more-btn {
-  margin-top:12px;
-  cursor:pointer;
-  background:none;
-  border:none;
-  font-size:15px;
+.menu-pdf a{
+  padding:12px 28px;
+  border:1px solid var(--accent);
   color:var(--accent);
-  font-weight:500;
+  text-decoration:none;
+  font-size:14px;
+}
+.menu-pdf a:hover{
+  background:var(--accent);
+  color:#fff;
 }
 
 /* RESERVATION */
-.reservation form {
-  max-width:500px;
+.reservation{
+  background:#f3ede7;
+}
+form{
+  max-width:480px;
   margin:auto;
 }
-input,textarea {
+input,textarea{
   width:100%;
   padding:12px;
   margin-bottom:14px;
   border:1px solid var(--border);
-}
-textarea { resize:none; height:100px; }
-button {
-  background:var(--accent);
-  color:#fff;
-  padding:12px 24px;
-  border:none;
-  cursor:pointer;
   font-size:14px;
 }
-
-/* CONTACT */
-.contact p {
-  margin:8px 0;
-  text-align:center;
-  color:var(--dark);
+textarea{resize:none;height:110px;}
+button{
+  padding:12px 26px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  cursor:pointer;
 }
 
+/* LOCATION */
+.location{
+  text-align:center;
+}
+.map{
+  margin-top:20px;
+  height:300px;
+  background:#ddd;
+}
+
+/* SOCIALS */
+.socials{
+  margin-top:20px;
+}
+.socials a{
+  margin:0 12px;
+  font-size:20px;
+  color:var(--dark);
+}
+.socials a:hover{color:var(--accent);}
+
 /* FOOTER */
-footer {
+footer{
   border-top:1px solid var(--border);
-  padding:20px;
+  padding:24px;
   text-align:center;
   font-size:13px;
   color:var(--gray);
 }
 
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
 /* RESPONSIVE */
-@media(max-width:768px) {
-  nav a { margin-left:18px; }
+@media(max-width:768px){
+  .hero h1{font-size:36px;}
+  .nav-links a{margin-left:16px;}
 }
 </style>
 </head>
+
 <body>
 
-<header class="fade-in">
-  <div class="header-inner">
+<header>
+  <div class="navbar">
     <div class="logo">NOAH</div>
-    <nav>
+    <div class="nav-links">
       <a href="#about">About</a>
       <a href="#menu">Menu</a>
-      <a href="#reservation">Book</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <a href="#reservation">Reservations</a>
+      <a href="#location">Location</a>
+    </div>
   </div>
 </header>
 
 <div class="hero">
-  <div class="hero-content fade-in">
-    <h1>Experience Authentic Georgian & Armenian Cuisine</h1>
-    <p>Traditional flavors, warm ambiance, and rich heritage.</p>
+  <div class="hero-content">
+    <h1>Georgian & Armenian Cuisine</h1>
+    <p>Classic recipes, warm hospitality, old-world atmosphere</p>
     <a href="#reservation">Reserve a Table</a>
   </div>
 </div>
 
 <section id="about">
-  <h2 class="section-title fade-in">About NOAH</h2>
-  <p class="about fade-in">
-    NOAH is a place where heritage meets hospitality.  
-    Inspired by the classic charm of old Georgian and Armenian dining,  
-    we bring generations of recipes to your table with care and craft.
+  <h2 class="section-title">About NOAH</h2>
+  <p class="about-text">
+    NOAH blends traditional Georgian and Armenian cuisine with a refined,
+    old-style interior. Every dish is crafted with respect for heritage
+    and attention to detail.
   </p>
-  <div class="features fade-in">
-    <div class="feature">
-      <h4>Authentic Recipes</h4>
-      <p>Time-honored dishes passed through generations.</p>
-    </div>
-    <div class="feature">
-      <h4>Warm Ambiance</h4>
-      <p>A welcoming atmosphere inspired by old decor.</p>
-    </div>
-    <div class="feature">
-      <h4>Experienced Chefs</h4>
-      <p>Culinary professionals with passion and skill.</p>
-    </div>
-  </div>
 </section>
 
 <section id="menu">
-  <h2 class="section-title fade-in">Menu</h2>
-
-  <div class="menu-grid fade-in">
-    <div>
-      <h3>Starters</h3>
-      <div class="menu-item">
-        <div class="menu-name">Dolma</div>
-        <div class="menu-price">€9</div>
-        <div class="menu-desc">Vine leaves, rice, herbs</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-name">Cheese Plate</div>
-        <div class="menu-price">€11</div>
-        <div class="menu-desc">Assorted Georgian & Armenian cheeses</div>
-      </div>
-      <div class="menu-item extra" style="display:none">
-        <div class="menu-name">Pkhali</div>
-        <div class="menu-price">€8</div>
-        <div class="menu-desc">Vegetable pâté with walnuts</div>
-      </div>
-      <button class="show-more-btn" onclick="toggleMenu(this)">Show More</button>
+  <h2 class="section-title">Menu Highlights</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <div class="menu-name">Khinkali <span class="menu-price">€13</span></div>
+      <div class="menu-desc">Handmade dumplings, traditional filling</div>
     </div>
-
-    <div>
-      <h3>Main Dishes</h3>
-      <div class="menu-item">
-        <div class="menu-name">Adjaruli Khachapuri</div>
-        <div class="menu-price">€12</div>
-        <div class="menu-desc">Cheese bread with egg</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-name">Khinkali</div>
-        <div class="menu-price">€13</div>
-        <div class="menu-desc">Handmade dumplings</div>
-      </div>
-      <div class="menu-item extra" style="display:none">
-        <div class="menu-name">Khorovats</div>
-        <div class="menu-price">€19</div>
-        <div class="menu-desc">Charcoal grilled meats</div>
-      </div>
-      <button class="show-more-btn" onclick="toggleMenu(this)">Show More</button>
+    <div class="menu-item">
+      <div class="menu-name">Adjaruli Khachapuri <span class="menu-price">€12</span></div>
+      <div class="menu-desc">Cheese bread with egg and butter</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-name">Khorovats <span class="menu-price">€19</span></div>
+      <div class="menu-desc">Charcoal grilled meats</div>
     </div>
   </div>
 
+  <div class="menu-pdf">
+    <a href="menu.pdf" target="_blank">View Full Menu (PDF)</a>
+  </div>
 </section>
 
 <section id="reservation" class="reservation">
-  <h2 class="section-title fade-in">Reserve a Table</h2>
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="fade-in">
+  <h2 class="section-title">Reservations</h2>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="date" name="date" required>
-    <input type="number" name="guests" placeholder="Number of Guests" required>
+    <input type="number" name="guests" placeholder="Guests" required>
     <textarea name="message" placeholder="Special requests"></textarea>
-    <button type="submit">Book Now</button>
+    <button type="submit">Book Table</button>
   </form>
 </section>
 
-<section id="contact" class="contact fade-in">
-  <h2 class="section-title">Contact</h2>
-  <p>📍 Old Town</p>
-  <p>📞 +357 99 000000</p>
-  <p>🕒 Daily 12:00–23:00</p>
+<section id="location" class="location">
+  <h2 class="section-title">Location</h2>
+  <p>Old Town</p>
+  <p>+357 99 000000</p>
+  <p>Daily 12:00 – 23:00</p>
+
+  <div class="map">
+    Google Map Embed Here
+  </div>
+
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
 </section>
 
 <footer>
-  © 2026 NOAH - All Rights Reserved
+  © 2026 NOAH Restaurant
 </footer>
 
-<script>
-function toggleMenu(btn) {
-  const category = btn.parentElement;
-  const extras = category.querySelectorAll('.extra');
-  extras.forEach(item => {
-    item.style.display = item.style.display === 'none' ? 'block' : 'none';
-    btn.textContent = item.style.display === 'none' ? 'Show More' : 'Show Less';
-  });
-}
-</script>
+</body>
+</html>
