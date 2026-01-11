@@ -24,37 +24,35 @@ body{
   background:var(--light);
   color:var(--dark);
   line-height:1.6;
+  padding-bottom:70px; /* space for bottom nav */
 }
 
-/* NAVBAR */
-header{
-  position:sticky;
-  top:0;
+/* TOP BAR */
+.top-bar{
   background:#fff;
   border-bottom:1px solid var(--border);
-  z-index:1000;
 }
-.navbar{
+.top-inner{
   max-width:1200px;
   margin:auto;
-  padding:18px 24px;
+  padding:10px 24px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
-.logo{
-  font-family:'Playfair Display',serif;
-  font-size:26px;
-  letter-spacing:2px;
-  color:var(--accent);
-}
-.nav-links a{
-  margin-left:28px;
+.languages a{
+  margin-right:12px;
+  font-size:13px;
   text-decoration:none;
-  font-size:14px;
   color:var(--dark);
 }
-.nav-links a:hover{color:var(--accent);}
+.languages a:hover{color:var(--accent);}
+.socials-top a{
+  margin-left:14px;
+  color:var(--dark);
+  font-size:15px;
+}
+.socials-top a:hover{color:var(--accent);}
 
 /* HERO */
 .hero{
@@ -96,7 +94,6 @@ header{
   text-decoration:none;
   font-size:14px;
 }
-.hero a:hover{background:#5e1e1e;}
 
 /* SECTIONS */
 section{
@@ -192,16 +189,34 @@ button{
   background:#ddd;
 }
 
-/* SOCIALS */
-.socials{
-  margin-top:20px;
+/* BOTTOM NAVBAR */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#fff;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  z-index:1000;
 }
-.socials a{
-  margin:0 12px;
-  font-size:20px;
+.bottom-nav a{
+  text-decoration:none;
   color:var(--dark);
+  font-size:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
-.socials a:hover{color:var(--accent);}
+.bottom-nav a i{
+  font-size:18px;
+  margin-bottom:4px;
+}
+.bottom-nav a:hover{
+  color:var(--accent);
+}
 
 /* FOOTER */
 footer{
@@ -221,39 +236,42 @@ footer{
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero h1{font-size:36px;}
-  .nav-links a{margin-left:16px;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="navbar">
-    <div class="logo">NOAH</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#reservation">Reservations</a>
-      <a href="#location">Location</a>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-inner">
+    <div class="languages">
+      <a href="#">EN</a>
+      <a href="#">GR</a>
+      <a href="#">RU</a>
+    </div>
+    <div class="socials-top">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
     </div>
   </div>
-</header>
+</div>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h1>Georgian & Armenian Cuisine</h1>
-    <p>Classic recipes, warm hospitality, old-world atmosphere</p>
+    <h1>NOAH</h1>
+    <p>Georgian & Armenian Cuisine</p>
     <a href="#reservation">Reserve a Table</a>
   </div>
 </div>
 
 <section id="about">
-  <h2 class="section-title">About NOAH</h2>
+  <h2 class="section-title">About</h2>
   <p class="about-text">
-    NOAH blends traditional Georgian and Armenian cuisine with a refined,
-    old-style interior. Every dish is crafted with respect for heritage
-    and attention to detail.
+    NOAH brings together traditional Georgian and Armenian cuisine in an
+    old-style, refined atmosphere. A place of heritage, warmth and hospitality.
   </p>
 </section>
 
@@ -262,11 +280,11 @@ footer{
   <div class="menu-grid">
     <div class="menu-item">
       <div class="menu-name">Khinkali <span class="menu-price">€13</span></div>
-      <div class="menu-desc">Handmade dumplings, traditional filling</div>
+      <div class="menu-desc">Handmade dumplings</div>
     </div>
     <div class="menu-item">
       <div class="menu-name">Adjaruli Khachapuri <span class="menu-price">€12</span></div>
-      <div class="menu-desc">Cheese bread with egg and butter</div>
+      <div class="menu-desc">Cheese bread with egg</div>
     </div>
     <div class="menu-item">
       <div class="menu-name">Khorovats <span class="menu-price">€19</span></div>
@@ -296,21 +314,20 @@ footer{
   <p>Old Town</p>
   <p>+357 99 000000</p>
   <p>Daily 12:00 – 23:00</p>
-
-  <div class="map">
-    Google Map Embed Here
-  </div>
-
-  <div class="socials">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-tiktok"></i></a>
-  </div>
+  <div class="map">Google Map Embed</div>
 </section>
 
 <footer>
   © 2026 NOAH Restaurant
 </footer>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="#about"><i class="fas fa-info-circle"></i>About</a>
+  <a href="#menu"><i class="fas fa-utensils"></i>Menu</a>
+  <a href="#reservation"><i class="fas fa-calendar"></i>Book</a>
+  <a href="#location"><i class="fas fa-map-marker-alt"></i>Location</a>
+</div>
 
 </body>
 </html>
