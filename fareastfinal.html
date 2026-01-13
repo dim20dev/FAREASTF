@@ -5,381 +5,334 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NOAH | Georgian & Armenian Restaurant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
-  --accent:#7a2a2a;
-  --dark:#2a2421;
-  --gray:#6b6662;
-  --light:#f9f5f1;
-  --border:#e5ddd4;
+  --bg:#0f0e0d;
+  --paper:#161513;
+  --accent:#8c5a2b;
+  --text:#f3f1ee;
+  --muted:#b8b3ad;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
-  font-family:'Montserrat',sans-serif;
-  background:var(--light);
-  color:var(--dark);
-  padding-bottom:80px;
+  font-family:Inter, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
 
-/* TOP BAR */
+/* ---------- TOP BAR ---------- */
 .top-bar{
-  background:#faf7f4;
-  border-bottom:1px solid var(--border);
-}
-.top-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:10px 24px;
+  position:fixed;
+  top:0;left:0;right:0;
+  height:48px;
+  background:#0c0b0a;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  font-size:12px;
-}
-.languages a{
-  margin-right:10px;
-  cursor:pointer;
-  color:var(--gray);
-}
-.languages a.active{color:var(--accent);font-weight:500}
-.socials-top a{
-  margin-left:14px;
-  color:var(--gray);
-}
-.socials-top a:hover{color:var(--accent)}
-
-/* DESKTOP NAV */
-.desktop-nav{
-  display:none;
-  background:#fff;
-  border-bottom:1px solid var(--border);
-}
-.desktop-nav-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:14px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.logo{
-  font-family:'Playfair Display',serif;
-  font-size:26px;
-  letter-spacing:2px;
-}
-.desktop-nav a{
-  margin-left:26px;
-  text-decoration:none;
-  color:var(--dark);
+  padding:0 18px;
+  z-index:1000;
   font-size:13px;
 }
-.desktop-nav a:hover{color:var(--accent)}
+.lang-switch a{
+  color:var(--muted);
+  margin-left:12px;
+  cursor:pointer;
+  text-decoration:none;
+}
+.lang-switch a.active{color:var(--text)}
+.socials a{
+  color:var(--muted);
+  margin-right:12px;
+}
 
-/* HERO */
+/* ---------- NAVBAR ---------- */
+nav{
+  position:fixed;
+  top:48px;
+  left:0;right:0;
+  height:64px;
+  background:rgba(15,14,13,.85);
+  backdrop-filter:blur(6px);
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  align-items:center;
+  z-index:999;
+}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+/* ---------- HERO ---------- */
 .hero{
+  height:100vh;
   position:relative;
-  height:80vh;
   overflow:hidden;
 }
 .hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
+  content:"";
+  position:absolute;inset:0;
   background:rgba(0,0,0,.45);
 }
-.hero-bg{
+.hero img{
   position:absolute;
   inset:0;
-  background-size:cover;
-  background-position:center;
-  animation:zoom 18s infinite;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
   transition:opacity 1.5s ease;
 }
+.hero img.active{opacity:1}
+
 .hero-content{
   position:relative;
   z-index:2;
   height:100%;
   display:flex;
-  align-items:center;
+  flex-direction:column;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  color:#fff;
+  padding:20px;
 }
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:52px;
-  letter-spacing:3px;
+.hero-content h1{
+  font-family:Playfair Display, serif;
+  font-size:56px;
+  letter-spacing:4px;
 }
-.hero p{margin-top:12px;font-size:15px}
-.hero a{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 36px;
-  border:1px solid #fff;
-  color:#fff;
-  text-decoration:none;
+.hero-content p{
+  margin-top:12px;
+  color:var(--muted);
 }
-.hero a:hover{background:#fff;color:#000}
 
-/* SECTIONS */
+/* ---------- SECTIONS ---------- */
 section{
-  max-width:1200px;
+  padding:100px 20px;
+  max-width:1100px;
   margin:auto;
-  padding:90px 24px;
 }
 .section-title{
-  font-family:'Playfair Display',serif;
-  font-size:30px;
-  color:var(--accent);
+  font-family:Playfair Display, serif;
+  font-size:36px;
+  margin-bottom:40px;
   text-align:center;
-  margin-bottom:30px;
 }
 
-/* FADE */
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-  transition:.8s ease;
-}
-.fade.show{opacity:1;transform:none}
-
-/* MENU & WINE */
-.grid{
+/* ---------- MENU ---------- */
+.menu-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:34px;
+  gap:30px;
 }
-.card{
-  background:#fff;
+.menu-item{
+  background:var(--paper);
   padding:22px;
-  border:1px solid var(--border);
 }
-.card-title{font-weight:500}
-.card-price{float:right;color:var(--accent)}
-.card-desc{margin-top:6px;font-size:14px;color:var(--gray)}
+.menu-item h4{
+  font-family:Playfair Display, serif;
+  font-size:18px;
+}
+.menu-item p{
+  font-size:13px;
+  color:var(--muted);
+  margin:8px 0;
+}
+.menu-item span{
+  font-size:13px;
+  letter-spacing:1px;
+}
 
-/* GALLERY */
-.gallery{
+.menu-actions{
+  text-align:center;
+  margin-top:40px;
+}
+.menu-actions button,a{
+  background:none;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  padding:10px 26px;
+  font-size:12px;
+  letter-spacing:1px;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+/* ---------- RESERVATION ---------- */
+form{
+  max-width:500px;
+  margin:auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  gap:14px;
 }
-.gallery img{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  transition:.6s ease;
-}
-.gallery img:hover{transform:scale(1.05);filter:brightness(.9)}
-
-/* RESERVATION */
-.reservation{background:#f1ebe6}
-form{max-width:460px;margin:auto}
-label{font-size:13px;display:block;margin-bottom:6px}
 input,textarea{
-  width:100%;
+  background:#111;
+  border:1px solid #333;
   padding:12px;
-  margin-bottom:16px;
-  border:1px solid var(--border);
+  color:var(--text);
 }
 button.submit{
-  width:100%;
-  padding:14px;
   background:var(--accent);
-  color:#fff;
   border:none;
+  color:#000;
+  padding:12px;
+  cursor:pointer;
 }
 
-/* MOBILE NAV */
-.bottom-nav{
-  position:fixed;
-  bottom:12px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  max-width:420px;
-  background:#fff;
-  border-radius:16px;
-  display:flex;
-  justify-content:space-around;
-  padding:10px 0;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
+/* ---------- LOCATION ---------- */
+.location{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
-.bottom-nav a{
-  text-decoration:none;
-  color:var(--gray);
-  font-size:11px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.location-info p{
+  margin-bottom:12px;
+  color:var(--muted);
 }
-.bottom-nav a:hover{color:var(--accent)}
-
-@media(min-width:900px){
-  .desktop-nav{display:block}
-  .bottom-nav{display:none}
+iframe{
+  width:100%;
+  height:300px;
+  border:0;
 }
 
-@keyframes zoom{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.06)}
-  100%{transform:scale(1)}
+/* ---------- MOBILE ---------- */
+@media(max-width:768px){
+  nav{
+    top:auto;
+    bottom:0;
+    height:60px;
+    gap:20px;
+  }
+  section{padding:80px 16px}
+  .hero-content h1{font-size:40px}
+  .location{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP -->
+<!-- TOP BAR -->
 <div class="top-bar">
-  <div class="top-inner">
-    <div class="languages">
-      <a onclick="setLang('en')" class="active">EN</a>
-      <a onclick="setLang('gr')">GR</a>
-      <a onclick="setLang('hy')">HY</a>
-      <a onclick="setLang('ka')">KA</a>
-    </div>
-    <div class="socials-top">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-tiktok"></i></a>
-    </div>
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+  <div class="lang-switch">
+    <a onclick="setLang('en')" class="active">EN</a>
+    <a onclick="setLang('gr')">GR</a>
   </div>
 </div>
 
-<nav class="desktop-nav">
-  <div class="desktop-nav-inner">
-    <div class="logo">NOAH</div>
-    <div>
-      <a href="#menu">MENU</a>
-      <a href="#wine">WINE</a>
-      <a href="#gallery">GALLERY</a>
-      <a href="#reservation">RESERVE</a>
-    </div>
-  </div>
+<!-- NAV -->
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#menu">MENU</a>
+  <a href="#reservation">RESERVE</a>
+  <a href="#location">LOCATION</a>
 </nav>
 
-<div class="hero">
-  <div class="hero-bg" id="heroBg"></div>
+<!-- HERO -->
+<div class="hero" id="home">
+  <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="active">
+  <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330">
+  <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+
   <div class="hero-content">
-    <div>
-      <h1>NOAH</h1>
-      <p id="heroText">Georgian & Armenian Restaurant</p>
-      <a href="#reservation" id="heroBtn">RESERVE A TABLE</a>
-    </div>
+    <h1>NOAH</h1>
+    <p>Georgian & Armenian Cuisine</p>
   </div>
 </div>
 
-<section id="menu" class="fade">
-  <h2 class="section-title" id="menuTitle">Menu</h2>
-  <div class="grid" id="menuGrid"></div>
-</section>
-
-<section id="wine" class="fade">
-  <h2 class="section-title">Wine List</h2>
-  <div class="grid" id="wineGrid"></div>
-</section>
-
-<section id="gallery" class="fade">
-  <h2 class="section-title">Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
-    <img src="https://images.unsplash.com/photo-1541542684-4a9c0f9d8e07">
-    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1">
+<!-- MENU -->
+<section id="menu">
+  <h2 class="section-title">Menu Highlights</h2>
+  <div class="menu-grid" id="menuGrid"></div>
+  <div class="menu-actions">
+    <button onclick="toggleMenu()">SHOW MORE</button>
+    <br><br>
+    <a href="menu.pdf" target="_blank">FULL MENU (PDF)</a>
   </div>
 </section>
 
-<section id="reservation" class="reservation fade">
+<!-- RESERVATION -->
+<section id="reservation">
   <h2 class="section-title">Reservation</h2>
-  <form action="https://formspree.io/f/YOUR_ID" method="POST">
-    <label>Full Name</label>
-    <input required>
-    <label>Email</label>
-    <input type="email" required>
-    <label>Date</label>
-    <input type="date" required>
-    <label>Guests</label>
-    <input type="number" required>
-    <button class="submit">BOOK TABLE</button>
+  <form action="YOUR_FORMSPREE_URL" method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="date" name="date" required>
+    <input type="time" name="time" required>
+    <input type="number" name="guests" placeholder="Guests" required>
+    <textarea name="message" placeholder="Notes"></textarea>
+    <button class="submit">RESERVE</button>
   </form>
 </section>
 
-<div class="bottom-nav">
-  <a href="#menu"><i class="fas fa-utensils"></i>Menu</a>
-  <a href="#wine"><i class="fas fa-wine-glass"></i>Wine</a>
-  <a href="#gallery"><i class="fas fa-image"></i>Gallery</a>
-  <a href="#reservation"><i class="fas fa-calendar"></i>Reserve</a>
-</div>
+<!-- LOCATION -->
+<section id="location">
+  <h2 class="section-title">Visit Us</h2>
+  <div class="location">
+    <div class="location-info">
+      <p>Old Town, City</p>
+      <p>Daily 12:00 – 23:00</p>
+      <p>+357 99 000000</p>
+    </div>
+    <iframe src="https://maps.google.com/maps?q=Old%20Town&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+  </div>
+</section>
 
 <script>
-const heroImages=[
-'https://images.unsplash.com/photo-1552566626-52f8b828add9',
-'https://images.unsplash.com/photo-1541542684-4a9c0f9d8e07',
-'https://images.unsplash.com/photo-1528605248644-14dd04022da1'
-];
-let hi=0;
-const heroBg=document.getElementById("heroBg");
-heroBg.style.backgroundImage=`url(${heroImages[0]})`;
+/* HERO ROTATION */
+const imgs=document.querySelectorAll('.hero img');
+let i=0;
 setInterval(()=>{
-  hi=(hi+1)%heroImages.length;
-  heroBg.style.opacity=0;
-  setTimeout(()=>{
-    heroBg.style.backgroundImage=`url(${heroImages[hi]})`;
-    heroBg.style.opacity=1;
-  },1000);
-},6000);
+  imgs[i].classList.remove('active');
+  i=(i+1)%imgs.length;
+  imgs[i].classList.add('active');
+},5000);
 
-const menuData={
-  en:[["Khinkali","Traditional dumplings","€13"],["Khachapuri","Cheese bread","€12"]],
-  gr:[["Χινκάλι","Παραδοσιακά ζυμαρικά","€13"],["Χατσαπούρι","Τυρένιο ψωμί","€12"]],
-  hy:[["Խինկալի","Ավանդական պելմենիներ","€13"],["Խաչապուրի","Պանրով հաց","€12"]],
-  ka:[["ხინკალი","ტრადიციული ცომეული","€13"],["ხაჭაპური","ყველიანი პური","€12"]]
-};
+/* MENU */
+let showAll=false;
+const menu=[
+  ["Khinkali","Traditional dumplings","€13"],
+  ["Khachapuri","Cheese bread","€12"],
+  ["Khorovats","Grilled meats","€19"],
+  ["Dolma","Stuffed vine leaves","€11"],
+  ["Lamb Kebab","Charcoal grilled","€21"],
+];
 
-const wineData={
-  en:[["Saperavi","Dry red wine","€28"],["Areni","Armenian red","€26"]],
-  gr:[["Σαπεραβί","Ξηρό κόκκινο","€28"],["Αρενί","Αρμενικό κόκκινο","€26"]],
-  hy:[["Սափերավի","Չոր կարմիր","€28"],["Արենի","Հայկական գինի","€26"]],
-  ka:[["საფერავი","მშრალი წითელი","€28"],["არენი","სომხური ღვინო","€26"]]
-};
-
-let lang="en";
-
-function render(){
-  menuGrid.innerHTML="";
-  wineGrid.innerHTML="";
-  menuData[lang].forEach(i=>{
-    menuGrid.innerHTML+=`<div class="card"><div class="card-title">${i[0]}<span class="card-price">${i[2]}</span></div><div class="card-desc">${i[1]}</div></div>`;
-  });
-  wineData[lang].forEach(i=>{
-    wineGrid.innerHTML+=`<div class="card"><div class="card-title">${i[0]}<span class="card-price">${i[2]}</span></div><div class="card-desc">${i[1]}</div></div>`;
+function renderMenu(){
+  const grid=document.getElementById("menuGrid");
+  grid.innerHTML="";
+  menu.slice(0,showAll?menu.length:3).forEach(m=>{
+    grid.innerHTML+=`
+      <div class="menu-item">
+        <h4>${m[0]}</h4>
+        <p>${m[1]}</p>
+        <span>${m[2]}</span>
+      </div>`;
   });
 }
+function toggleMenu(){showAll=!showAll;renderMenu()}
+renderMenu();
+
+/* LANGUAGE PLACEHOLDER */
 function setLang(l){
-  lang=l;
-  document.querySelectorAll(".languages a").forEach(a=>a.classList.remove("active"));
-  event.target.classList.add("active");
-  heroText.textContent={
-    en:"Georgian & Armenian Restaurant",
-    gr:"Γεωργιανή & Αρμενική Κουζίνα",
-    hy:"Վրացական և հայկական խոհանոց",
-    ka:"ქართული და სომხური რესტორანი"
-  }[l];
-  heroBtn.textContent=l==="gr"?"ΚΡΑΤΗΣΗ":"RESERVE A TABLE";
-  render();
+  document.querySelectorAll('.lang-switch a').forEach(a=>a.classList.remove('active'));
+  event.target.classList.add('active');
 }
-render();
-
-document.addEventListener("scroll",()=>{
-  document.querySelectorAll(".fade").forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100){
-      el.classList.add("show");
-    }
-  });
-});
 </script>
 
 </body>
